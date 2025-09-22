@@ -1,0 +1,225 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@custom-variant dark (&:is(.dark *));
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to sophisticated cyan/indigo space theme palette */
+  --background: #0a0a0a; /* Deep space black */
+  --foreground: #ffffff; /* White */
+  --card: #1a1a2e; /* Dark navy card background */
+  --card-foreground: #e5e7eb; /* Light silver text */
+  --popover: rgba(26, 26, 46, 0.95); /* Semi-transparent navy */
+  --popover-foreground: #ffffff; /* White */
+  --primary: #0891b2; /* Cyan-600 primary - modern and tech-focused */
+  --primary-foreground: #ffffff; /* White */
+  --secondary: #1e40af; /* Blue-700 secondary - professional navy */
+  --secondary-foreground: #ffffff; /* White */
+  --muted: #374151; /* Muted silver */
+  --muted-foreground: #d1d5db; /* Light silver */
+  --accent: #6366f1; /* Indigo-500 accent - sophisticated highlight */
+  --accent-foreground: #ffffff; /* White */
+  --destructive: #dc2626; /* Red for alerts */
+  --destructive-foreground: #ffffff; /* White */
+  --border: #374151; /* Silver border */
+  --input: #1a1a2e; /* Navy input background */
+  --ring: rgba(8, 145, 178, 0.4); /* Cyan glow */
+  --chart-1: #0891b2; /* Cyan for charts */
+  --chart-2: #6366f1; /* Indigo for charts */
+  --chart-3: #1e40af; /* Blue for charts */
+  --chart-4: #ffffff; /* White for charts */
+  --chart-5: #0a0a0a; /* Black for charts */
+  --radius: 0.5rem; /* Corner rounding */
+  --sidebar: #1a1a2e; /* Navy for sidebar */
+  --sidebar-foreground: #ffffff; /* White for sidebar text */
+  --sidebar-primary: #6b7280; /* Silver for primary sidebar elements */
+  --sidebar-primary-foreground: #ffffff; /* White for sidebar text */
+  --sidebar-accent: #6366f1; /* Indigo for sidebar accents */
+  --sidebar-accent-foreground: #ffffff; /* White for sidebar accent text */
+  --sidebar-border: #374151; /* Silver for sidebar borders */
+  --sidebar-ring: rgba(8, 145, 178, 0.3); /* Cyan glow for sidebar */
+}
+
+.dark {
+  /* Dark mode uses the same space theme colors */
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  --card: #1a1a2e;
+  --card-foreground: #e5e7eb;
+  --popover: rgba(26, 26, 46, 0.95);
+  --popover-foreground: #ffffff;
+  --primary: #0891b2;
+  --primary-foreground: #ffffff;
+  --secondary: #1e40af;
+  --secondary-foreground: #ffffff;
+  --muted: #374151;
+  --muted-foreground: #d1d5db;
+  --accent: #6366f1;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #374151;
+  --input: #1a1a2e;
+  --ring: rgba(8, 145, 178, 0.4);
+  --chart-1: #0891b2;
+  --chart-2: #6366f1;
+  --chart-3: #1e40af;
+  --chart-4: #ffffff;
+  --chart-5: #0a0a0a;
+  --sidebar: #1a1a2e;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #6b7280;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #6366f1;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #374151;
+  --sidebar-ring: rgba(8, 145, 178, 0.3);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Updated starfield animation and space-themed effects with new color palette */
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(8, 145, 178, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(8, 145, 178, 0.5);
+  }
+}
+
+.starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 3s infinite;
+}
+
+.star:nth-child(odd) {
+  animation-delay: 1s;
+}
+
+.star:nth-child(3n) {
+  animation-delay: 2s;
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+.glow {
+  box-shadow: 0 0 20px rgba(8, 145, 178, 0.3);
+}
+
+.text-glow {
+  text-shadow: 0 0 10px rgba(8, 145, 178, 0.5);
+}
+
+.pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Added enhanced gradient effects with new color palette */
+.gradient-text {
+  background: linear-gradient(135deg, #0891b2, #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-border {
+  background: linear-gradient(135deg, #0891b2, #6366f1);
+  padding: 1px;
+  border-radius: 0.5rem;
+}
+
+.gradient-border > * {
+  background: var(--background);
+  border-radius: calc(0.5rem - 1px);
+}
