@@ -66,7 +66,7 @@ export function HeroSection() {
             document.addEventListener("DOMContentLoaded", () => {
               const video = document.querySelector("video");
               if (video) {
-                video.playbackRate = 0.75;
+                video.playbackRate = 1;
               }
             });
           `,
